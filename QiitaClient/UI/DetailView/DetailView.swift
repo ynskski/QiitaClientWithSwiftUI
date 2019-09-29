@@ -16,15 +16,6 @@ struct DetailView: View {
             SafariView(url: URL(string: url)!)
                 .edgesIgnoringSafeArea(.all)
         }
-        
-//        .navigationBarTitle(Text(url), displayMode: .inline)
-//        VStack {
-//            WebView(url: URL(string: url)!)
-//            .edgesIgnoringSafeArea(.bottom)
-//            .edgesIgnoringSafeArea(.top)
-//        }
-//        .navigationBarTitle(Text(url), displayMode: .inline)
-        
     }
 }
 
