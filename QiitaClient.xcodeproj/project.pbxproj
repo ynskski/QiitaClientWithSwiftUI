@@ -96,8 +96,8 @@
 				0241D09123366A4800228C95 /* LaunchScreen.storyboard */,
 				0241D09423366A4800228C95 /* Info.plist */,
 				0241D08E23366A4800228C95 /* Preview Content */,
-				0293C1902340B655003F53F0 /* RemoteImageURL.swift */,
 				0293C1922340BA30003F53F0 /* ImageViewContainer.swift */,
+				0293C1902340B655003F53F0 /* RemoteImageURL.swift */,
 			);
 			path = QiitaClient;
 			sourceTree = "<group>";

@@ -11,13 +11,7 @@ import Combine
 import UIKit
 
 class RemoteImageURL: ObservableObject {
-    let didChange = PassthroughSubject<RemoteImageURL, Never>()
-    
-    private(set) var image: UIImage = UIImage(systemName: "photo")! {
-        didSet {
-            didChange.send(self)
-        }
-    }
+    @Published private(set) var image: UIImage = UIImage(systemName: "photo")!
     
     init(with imageURL: String) {
         guard let url = URL(string: imageURL) else { return }
