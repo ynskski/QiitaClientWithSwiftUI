@@ -17,8 +17,8 @@ struct ContentView: View {
                 VStack(alignment: .leading) {
                     Text(article.title)
                     
-//                    Text(article.user.name)
-//                        .font(.caption)
+                    Text(article.user.id)
+                        .font(.caption)
                 }
             }
             .navigationBarTitle(Text("Articles"))

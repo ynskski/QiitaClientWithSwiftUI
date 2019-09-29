@@ -14,6 +14,7 @@ struct Article: Decodable, Identifiable {
     var user: User
     
     struct User: Decodable {
+        var id: String
         var name: String
     }
 }
