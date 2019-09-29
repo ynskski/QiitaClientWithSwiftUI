@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class ContentViewModel: ObservableObject {
+class ListViewModel: ObservableObject {
     @Published var articles: [Article] = []
     
     init() {

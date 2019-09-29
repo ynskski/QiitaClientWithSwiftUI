@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @ObservedObject var viewModel = ContentViewModel()
+struct ListView: View {
+    @ObservedObject var viewModel = ListViewModel()
     @State var showModal = false
     @State var url = ""
     
@@ -35,14 +35,16 @@ struct ContentView: View {
             }
             .navigationBarTitle(Text("New Articles"))
             .sheet(isPresented: $showModal) {
-                ArticleView(url: self.url)
+//                ArticleView(url: self.url)
+                SafariView(url: URL(string: self.url)!)
+                    .edgesIgnoringSafeArea(.bottom)
             }
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ListView()
     }
 }
