@@ -14,11 +14,16 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(viewModel.articles) { article in
-                VStack(alignment: .leading) {
-                    Text(article.title)
+                HStack {
+                    ImageViewContainer(imageURL: article.user.profileImageURL)
                     
-                    Text(article.user.id)
-                        .font(.caption)
+                    VStack(alignment: .leading) {
+                        Text(article.title)
+                            .lineLimit(nil)
+                        
+                        Text("by \(article.user.id)")
+                            .font(.caption)
+                    }
                 }
             }
             .navigationBarTitle(Text("Articles"))
