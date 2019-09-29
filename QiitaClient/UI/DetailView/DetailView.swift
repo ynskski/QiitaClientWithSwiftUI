@@ -13,13 +13,19 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
-            WebView(url: URL(string: url)!)
-            .edgesIgnoringSafeArea(.bottom)
-            .edgesIgnoringSafeArea(.top)
+            SafariView(url: URL(string: url)!)
+                .edgesIgnoringSafeArea(.all)
         }
-        .navigationBarTitle(Text(url), displayMode: .inline)
         
-}
+//        .navigationBarTitle(Text(url), displayMode: .inline)
+//        VStack {
+//            WebView(url: URL(string: url)!)
+//            .edgesIgnoringSafeArea(.bottom)
+//            .edgesIgnoringSafeArea(.top)
+//        }
+//        .navigationBarTitle(Text(url), displayMode: .inline)
+        
+    }
 }
 
 struct DetailView_Previews: PreviewProvider {
