@@ -10,26 +10,33 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var viewModel = ContentViewModel()
+    @State var showModal = false
+    @State var url = ""
     
     var body: some View {
         NavigationView {
             List(viewModel.articles) { article in
-                NavigationLink(destination: DetailView(url: article.url)) {
-                    HStack(alignment: .top) {
-                        ProfileImageView(imageURL: article.user.profileImageURL)
+                HStack(alignment: .top) {
+                    ProfileImageView(imageURL: article.user.profileImageURL)
+                    
+                    VStack(alignment: .leading) {
+                        Text(article.title)
+                            .lineLimit(nil)
                         
-                        VStack(alignment: .leading) {
-                            Text(article.title)
-                                .lineLimit(nil)
-                            
-                            Text("by \(article.user.id)")
-                                .font(.caption)
-                        }
+                        Text("by \(article.user.id)")
+                            .font(.caption)
                     }
-                    .padding(.vertical, 8)
                 }
+                .onTapGesture {
+                    self.showModal.toggle()
+                    self.url = article.url
+                }
+                .padding(.vertical, 8)
             }
             .navigationBarTitle(Text("New Articles"))
+            .sheet(isPresented: $showModal) {
+                DetailView(url: self.url)
+            }
         }
     }
 }
