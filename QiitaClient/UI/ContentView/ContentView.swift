@@ -35,7 +35,7 @@ struct ContentView: View {
             }
             .navigationBarTitle(Text("New Articles"))
             .sheet(isPresented: $showModal) {
-                DetailView(url: self.url)
+                ArticleView(url: self.url)
             }
         }
     }

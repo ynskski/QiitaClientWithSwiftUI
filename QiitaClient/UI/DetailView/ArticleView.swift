@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct DetailView: View {
+struct ArticleView: View {
     var url: String
     
     var body: some View {
@@ -19,8 +19,8 @@ struct DetailView: View {
     }
 }
 
-struct DetailView_Previews: PreviewProvider {
+struct ArticleView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(url: "")
+        ArticleView(url: "")
     }
 }
