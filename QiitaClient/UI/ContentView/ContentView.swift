@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(viewModel.articles) { article in
-                NavigationLink(destination: SafariView(url: URL(string: article.url)!)) {
+                NavigationLink(destination: DetailView(url: article.url)) {
                     HStack(alignment: .top) {
                         ProfileImageView(imageURL: article.user.profileImageURL)
                         
