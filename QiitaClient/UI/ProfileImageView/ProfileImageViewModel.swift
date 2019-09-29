@@ -13,8 +13,13 @@ import UIKit
 class ProfileImageViewModel: ObservableObject {
     @Published private(set) var image: UIImage = UIImage(systemName: "photo")!
     
-    init(with imageURL: String) {
+    init(imageURL: String) {
+        loadProfileImage(imageURL: imageURL)
+    }
+    
+    func loadProfileImage(imageURL: String) {
         guard let url = URL(string: imageURL) else { return }
+        
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let imageData = data,
                 let remoteImage = UIImage(data: imageData) else { return }

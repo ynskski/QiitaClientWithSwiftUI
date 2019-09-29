@@ -24,7 +24,6 @@ class ContentViewModel: ObservableObject {
         ]
         
         URLSession.shared.dataTask(with: urlComponents.url!) { data, response, error in
-            
             guard let jsonData = data else { return }
             
             DispatchQueue.main.async {

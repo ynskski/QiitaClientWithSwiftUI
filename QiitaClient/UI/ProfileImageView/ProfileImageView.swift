@@ -12,7 +12,7 @@ struct ProfileImageView: View {
     @ObservedObject var profileImageViewModel: ProfileImageViewModel
     
     init(imageURL: String) {
-        profileImageViewModel = ProfileImageViewModel(with: imageURL)
+        profileImageViewModel = ProfileImageViewModel(imageURL: imageURL)
     }
     
     var body: some View {
