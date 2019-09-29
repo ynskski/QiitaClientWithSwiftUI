@@ -8,11 +8,12 @@
 
 import Foundation
 
-struct Article: Codable {
+struct Article: Decodable, Identifiable {
+    var id: String
     var title: String
     var user: User
     
-    struct User: Codable {
+    struct User: Decodable {
         var name: String
     }
 }
