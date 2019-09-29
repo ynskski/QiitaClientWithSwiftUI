@@ -10,7 +10,7 @@ import Foundation
 import Combine
 import UIKit
 
-class RemoteImageURL: ObservableObject {
+class ProfileImageViewModel: ObservableObject {
     @Published private(set) var image: UIImage = UIImage(systemName: "photo")!
     
     init(with imageURL: String) {

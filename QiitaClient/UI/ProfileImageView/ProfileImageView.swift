@@ -8,23 +8,23 @@
 
 import SwiftUI
 
-struct ImageViewContainer: View {
-    @ObservedObject var remoteImageURL: RemoteImageURL
+struct ProfileImageView: View {
+    @ObservedObject var profileImageViewModel: ProfileImageViewModel
     
     init(imageURL: String) {
-        remoteImageURL = RemoteImageURL(with: imageURL)
+        profileImageViewModel = ProfileImageViewModel(with: imageURL)
     }
     
     var body: some View {
-        Image(uiImage: remoteImageURL.image)
+        Image(uiImage: profileImageViewModel.image)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 40, height: 40)
     }
 }
 
-struct ImageViewContainer_Previews: PreviewProvider {
+struct ProfileImageView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageViewContainer(imageURL: "")
+        ProfileImageView(imageURL: "")
     }
 }

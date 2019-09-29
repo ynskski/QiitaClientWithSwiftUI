@@ -15,7 +15,7 @@ struct ContentView: View {
         NavigationView {
             List(viewModel.articles) { article in
                 HStack(alignment: .top) {
-                    ImageViewContainer(imageURL: article.user.profileImageURL)
+                    ProfileImageView(imageURL: article.user.profileImageURL)
                     
                     VStack(alignment: .leading) {
                         Text(article.title)
