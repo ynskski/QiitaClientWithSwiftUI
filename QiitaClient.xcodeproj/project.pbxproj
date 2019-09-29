@@ -79,6 +79,7 @@
 		0241D08523366A4500228C95 /* QiitaClient */ = {
 			isa = PBXGroup;
 			children = (
+				0241D0A823366A5700228C95 /* API */,
 				0241D08623366A4500228C95 /* AppDelegate.swift */,
 				0241D08823366A4500228C95 /* SceneDelegate.swift */,
 				0241D08A23366A4500228C95 /* ContentView.swift */,
@@ -105,6 +106,13 @@
 				0241D09F23366A4800228C95 /* Info.plist */,
 			);
 			path = QiitaClientTests;
+			sourceTree = "<group>";
+		};
+		0241D0A823366A5700228C95 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
