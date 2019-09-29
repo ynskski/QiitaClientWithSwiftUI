@@ -14,18 +14,20 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(viewModel.articles) { article in
-                HStack(alignment: .top) {
-                    ProfileImageView(imageURL: article.user.profileImageURL)
-                    
-                    VStack(alignment: .leading) {
-                        Text(article.title)
-                            .lineLimit(nil)
+                NavigationLink(destination: SafariView(url: URL(string: article.url)!)) {
+                    HStack(alignment: .top) {
+                        ProfileImageView(imageURL: article.user.profileImageURL)
                         
-                        Text("by \(article.user.id)")
-                            .font(.caption)
+                        VStack(alignment: .leading) {
+                            Text(article.title)
+                                .lineLimit(nil)
+                            
+                            Text("by \(article.user.id)")
+                                .font(.caption)
+                        }
                     }
+                    .padding(.vertical, 8)
                 }
-                .padding(.vertical, 8)
             }
             .navigationBarTitle(Text("New Articles"))
         }

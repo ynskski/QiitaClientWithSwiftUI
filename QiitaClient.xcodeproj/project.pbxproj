@@ -18,6 +18,7 @@
 		0293C18B234088ED003F53F0 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0293C18A234088ED003F53F0 /* ContentViewModel.swift */; };
 		0293C1912340B655003F53F0 /* ProfileImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0293C1902340B655003F53F0 /* ProfileImageViewModel.swift */; };
 		0293C1932340BA30003F53F0 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0293C1922340BA30003F53F0 /* ProfileImageView.swift */; };
+		0293C19B2340DBDE003F53F0 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0293C19A2340DBDE003F53F0 /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		0293C18A234088ED003F53F0 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		0293C1902340B655003F53F0 /* ProfileImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewModel.swift; sourceTree = "<group>"; };
 		0293C1922340BA30003F53F0 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		0293C19A2340DBDE003F53F0 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		0293C1962340D878003F53F0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0293C1992340DBC6003F53F0 /* SafariView */,
 				0293C1972340D88D003F53F0 /* ContentView */,
 				0293C1982340D89A003F53F0 /* ProfileImageView */,
 			);
@@ -149,6 +152,14 @@
 				0293C1902340B655003F53F0 /* ProfileImageViewModel.swift */,
 			);
 			path = ProfileImageView;
+			sourceTree = "<group>";
+		};
+		0293C1992340DBC6003F53F0 /* SafariView */ = {
+			isa = PBXGroup;
+			children = (
+				0293C19A2340DBDE003F53F0 /* SafariView.swift */,
+			);
+			path = SafariView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +267,7 @@
 				0293C1912340B655003F53F0 /* ProfileImageViewModel.swift in Sources */,
 				0241D08723366A4500228C95 /* AppDelegate.swift in Sources */,
 				0293C1932340BA30003F53F0 /* ProfileImageView.swift in Sources */,
+				0293C19B2340DBDE003F53F0 /* SafariView.swift in Sources */,
 				0241D08923366A4500228C95 /* SceneDelegate.swift in Sources */,
 				0241D08B23366A4500228C95 /* ContentView.swift in Sources */,
 				0293C18B234088ED003F53F0 /* ContentViewModel.swift in Sources */,
