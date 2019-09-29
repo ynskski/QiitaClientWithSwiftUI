@@ -25,8 +25,9 @@ struct ContentView: View {
                             .font(.caption)
                     }
                 }
+                .padding(.vertical, 8)
             }
-            .navigationBarTitle(Text("Articles"))
+            .navigationBarTitle(Text("New Articles"))
         }
     }
 }
