@@ -35,7 +35,6 @@ struct ListView: View {
             }
             .navigationBarTitle(Text("New Articles"))
             .sheet(isPresented: $showModal) {
-//                ArticleView(url: self.url)
                 SafariView(url: URL(string: self.url)!)
                     .edgesIgnoringSafeArea(.bottom)
             }
