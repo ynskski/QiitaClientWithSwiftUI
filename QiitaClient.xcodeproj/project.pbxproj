@@ -19,6 +19,7 @@
 		0293C18B234088ED003F53F0 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0293C18A234088ED003F53F0 /* ListViewModel.swift */; };
 		0293C1912340B655003F53F0 /* ProfileImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0293C1902340B655003F53F0 /* ProfileImageViewModel.swift */; };
 		0293C1932340BA30003F53F0 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0293C1922340BA30003F53F0 /* ProfileImageView.swift */; };
+		02AB53D2234609590038D0BC /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB53D1234609590038D0BC /* ArticleRowView.swift */; };
 		02F045C72340E9A400E6233E /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F045C62340E9A400E6233E /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		0293C18A234088ED003F53F0 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		0293C1902340B655003F53F0 /* ProfileImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewModel.swift; sourceTree = "<group>"; };
 		0293C1922340BA30003F53F0 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		02AB53D1234609590038D0BC /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
 		02F045C62340E9A400E6233E /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +151,7 @@
 			children = (
 				027703A32340E449001EA27B /* DetailView */,
 				0277039E2340E0A6001EA27B /* WebView */,
+				02AB53D02346093A0038D0BC /* ArticleRow */,
 				0293C1972340D88D003F53F0 /* ArticleListView */,
 				0293C1982340D89A003F53F0 /* ProfileImageView */,
 			);
@@ -171,6 +174,14 @@
 				0293C1902340B655003F53F0 /* ProfileImageViewModel.swift */,
 			);
 			path = ProfileImageView;
+			sourceTree = "<group>";
+		};
+		02AB53D02346093A0038D0BC /* ArticleRow */ = {
+			isa = PBXGroup;
+			children = (
+				02AB53D1234609590038D0BC /* ArticleRowView.swift */,
+			);
+			path = ArticleRow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +291,7 @@
 				027703A22340E443001EA27B /* ArticleView.swift in Sources */,
 				02F045C72340E9A400E6233E /* SafariView.swift in Sources */,
 				0293C1932340BA30003F53F0 /* ProfileImageView.swift in Sources */,
+				02AB53D2234609590038D0BC /* ArticleRowView.swift in Sources */,
 				0241D08923366A4500228C95 /* SceneDelegate.swift in Sources */,
 				0241D08B23366A4500228C95 /* ListView.swift in Sources */,
 				0293C18B234088ED003F53F0 /* ListViewModel.swift in Sources */,
