@@ -149,19 +149,19 @@
 			children = (
 				027703A32340E449001EA27B /* DetailView */,
 				0277039E2340E0A6001EA27B /* WebView */,
-				0293C1972340D88D003F53F0 /* ContentView */,
+				0293C1972340D88D003F53F0 /* ArticleListView */,
 				0293C1982340D89A003F53F0 /* ProfileImageView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		0293C1972340D88D003F53F0 /* ContentView */ = {
+		0293C1972340D88D003F53F0 /* ArticleListView */ = {
 			isa = PBXGroup;
 			children = (
 				0241D08A23366A4500228C95 /* ListView.swift */,
 				0293C18A234088ED003F53F0 /* ListViewModel.swift */,
 			);
-			path = ContentView;
+			path = ArticleListView;
 			sourceTree = "<group>";
 		};
 		0293C1982340D89A003F53F0 /* ProfileImageView */ = {
