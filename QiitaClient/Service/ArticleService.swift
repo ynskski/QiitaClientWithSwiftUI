@@ -32,16 +32,3 @@ class ArticleService {
             .eraseToAnyPublisher()
     }
 }
-
-enum APIError: Error, LocalizedError {
-    case unknown, apiError(reason: String)
-
-    var errorDescription: String? {
-        switch self {
-        case .unknown:
-            return "Unknown error"
-        case .apiError(let reason):
-            return reason
-        }
-    }
-}
