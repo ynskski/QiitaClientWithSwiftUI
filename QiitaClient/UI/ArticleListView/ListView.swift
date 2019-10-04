@@ -16,17 +16,7 @@ struct ListView: View {
     var body: some View {
         NavigationView {
             List(viewModel.articles) { article in
-                HStack(alignment: .top) {
-                    ProfileImageView(imageURL: article.user.profileImageURL)
-                    
-                    VStack(alignment: .leading) {
-                        Text(article.title)
-                            .lineLimit(nil)
-                        
-                        Text("by \(article.user.id)")
-                            .font(.caption)
-                    }
-                }
+                ArticleRowView(article: article)
                 .onTapGesture {
                     self.showModal.toggle()
                     self.url = article.url
@@ -35,7 +25,6 @@ struct ListView: View {
             }
             .navigationBarTitle(Text("New Articles"))
             .sheet(isPresented: $showModal) {
-//                ArticleView(url: self.url)
                 SafariView(url: URL(string: self.url)!)
                     .edgesIgnoringSafeArea(.bottom)
             }
