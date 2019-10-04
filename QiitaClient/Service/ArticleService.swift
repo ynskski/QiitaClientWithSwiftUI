@@ -7,23 +7,41 @@
 //
 
 import Foundation
+import Combine
 
 class ArticleService {
-    func fetchArticles(url: URL, completion: @escaping ([Article]?) -> ()) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else {
-                completion(nil)
-                return
-            }
+    func fetchArticle(url: URL) -> AnyPublisher<[Article], Error> {
+        let request = URLRequest(url: url)
 
-            DispatchQueue.main.async {
-                do {
-                    let articles = try JSONDecoder().decode([Article].self, from: data)
-                    completion(articles)
-                } catch {
-                    print("client error: \(error.localizedDescription)")
+        return URLSession.DataTaskPublisher(request: request, session: .shared)
+            .tryMap { data, response in
+                guard let response = response as? HTTPURLResponse, 200..<300 ~= response.statusCode else {
+                    throw APIError.unknown
+                }
+                return data
+            }
+            .mapError { error -> APIError in
+                if let error = error as? APIError {
+                    return error
+                } else {
+                    return APIError.apiError(reason: error.localizedDescription)
                 }
             }
-        }.resume()
+            .decode(type: [Article].self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+}
+
+enum APIError: Error, LocalizedError {
+    case unknown, apiError(reason: String)
+
+    var errorDescription: String? {
+        switch self {
+        case .unknown:
+            return "Unknown error"
+        case .apiError(let reason):
+            return reason
+        }
     }
 }

@@ -12,6 +12,8 @@ import Combine
 class ListViewModel: ObservableObject {
     @Published var articles: [Article] = []
     
+    private var cancellables: Set<AnyCancellable> = []
+    
     init() {
         loadArticles()
     }
@@ -23,21 +25,20 @@ class ListViewModel: ObservableObject {
             URLQueryItem(name: "per_page", value: "50")
         ]
         
-        ArticleService().fetchArticles(url: urlComponents.url!) { articles in
-            if let articles = articles {
-                self.articles = articles
-            }
-        }
-//        URLSession.shared.dataTask(with: urlComponents.url!) { data, response, error in
-//            guard let jsonData = data else { return }
-//
-//            DispatchQueue.main.async {
-//                do {
-//                    self.articles = try JSONDecoder().decode([Article].self, from: jsonData)
-//                } catch {
-//                    print("client error: \(error.localizedDescription)")
-//                }
-//            }
-//        }.resume()
+        ArticleService()
+            .fetchArticle(url: urlComponents.url!)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }, receiveValue: { articles in
+                    self.articles = articles
+                }
+            )
+            .store(in: &cancellables)
     }
 }
