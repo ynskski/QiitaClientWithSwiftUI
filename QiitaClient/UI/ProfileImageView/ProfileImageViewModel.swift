@@ -12,6 +12,8 @@ import UIKit
 class ProfileImageViewModel: ObservableObject {
     @Published private(set) var image: UIImage = UIImage(systemName: "photo")!
     
+    private var cancellables: Set<AnyCancellable> = []
+    
     init(imageURL: String) {
         loadProfileImage(imageURL: imageURL)
     }
@@ -19,14 +21,21 @@ class ProfileImageViewModel: ObservableObject {
     func loadProfileImage(imageURL: String) {
         guard let url = URL(string: imageURL) else { return }
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let imageData = data,
-                let remoteImage = UIImage(data: imageData) else { return }
-            
-            DispatchQueue.main.async {
-                self.image = remoteImage
-            }
-        }.resume()
+        ProfileImageService()
+            .fetchProfileImage(url: url)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }, receiveValue: { image in
+                    self.image = image
+                }
+            )
+            .store(in: &cancellables)
     }
     
 }
