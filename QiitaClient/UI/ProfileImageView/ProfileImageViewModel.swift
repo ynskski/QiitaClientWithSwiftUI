@@ -6,7 +6,6 @@
 //  Copyright © 2019 Yunosuke Sakai. All rights reserved.
 //
 
-import Foundation
 import Combine
 import UIKit
 

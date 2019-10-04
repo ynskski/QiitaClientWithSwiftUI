@@ -23,16 +23,21 @@ class ListViewModel: ObservableObject {
             URLQueryItem(name: "per_page", value: "50")
         ]
         
-        URLSession.shared.dataTask(with: urlComponents.url!) { data, response, error in
-            guard let jsonData = data else { return }
-            
-            DispatchQueue.main.async {
-                do {
-                    self.articles = try JSONDecoder().decode([Article].self, from: jsonData)
-                } catch {
-                    print("client error: \(error.localizedDescription)")
-                }
+        ArticleService().fetchArticles(url: urlComponents.url!) { articles in
+            if let articles = articles {
+                self.articles = articles
             }
-        }.resume()
+        }
+//        URLSession.shared.dataTask(with: urlComponents.url!) { data, response, error in
+//            guard let jsonData = data else { return }
+//
+//            DispatchQueue.main.async {
+//                do {
+//                    self.articles = try JSONDecoder().decode([Article].self, from: jsonData)
+//                } catch {
+//                    print("client error: \(error.localizedDescription)")
+//                }
+//            }
+//        }.resume()
     }
 }
