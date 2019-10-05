@@ -12,16 +12,25 @@ struct ListView: View {
     @ObservedObject var viewModel = ListViewModel()
     @State var showModal = false
     @State var url = ""
+    @State var searchText = ""
     
     var body: some View {
         NavigationView {
-            List(viewModel.articles) { article in
-                ArticleRowView(article: article)
-                .onTapGesture {
-                    self.showModal.toggle()
-                    self.url = article.url
+            Form {
+                Section {
+                    TextField("Search", text: self.$searchText)
                 }
-                .padding(.vertical, 8)
+
+                Section {
+                    ForEach(self.viewModel.articles) { article in
+                        ArticleRowView(article: article)
+                            .onTapGesture {
+                                self.showModal.toggle()
+                                self.url = article.url
+                            }
+                            .padding(.vertical, 8)
+                    }
+                }
             }
             .navigationBarTitle(Text("New Articles"))
             .sheet(isPresented: $showModal) {

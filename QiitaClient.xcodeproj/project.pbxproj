@@ -102,8 +102,6 @@
 				0241D08623366A4500228C95 /* AppDelegate.swift */,
 				0241D08823366A4500228C95 /* SceneDelegate.swift */,
 				0286CACE2347AA5F00496DED /* API */,
-				0286CAC9234768E800496DED /* Service */,
-				0241D0A823366A5700228C95 /* Model */,
 				0293C1962340D878003F53F0 /* UI */,
 				0241D08C23366A4800228C95 /* Assets.xcassets */,
 				0241D09123366A4800228C95 /* LaunchScreen.storyboard */,
@@ -128,14 +126,6 @@
 				0241D09F23366A4800228C95 /* Info.plist */,
 			);
 			path = QiitaClientTests;
-			sourceTree = "<group>";
-		};
-		0241D0A823366A5700228C95 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0293C186234083CB003F53F0 /* Article.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		0277039E2340E0A6001EA27B /* WebView */ = {
@@ -166,7 +156,9 @@
 		0286CACE2347AA5F00496DED /* API */ = {
 			isa = PBXGroup;
 			children = (
+				0293C186234083CB003F53F0 /* Article.swift */,
 				0286CACC2347AA1B00496DED /* APIError.swift */,
+				0286CAC9234768E800496DED /* Service */,
 			);
 			path = API;
 			sourceTree = "<group>";
