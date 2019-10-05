@@ -19,6 +19,7 @@ struct ListView: View {
             Form {
                 Section {
                     TextField("Search", text: self.$searchText)
+                        .keyboardType(.webSearch)
                 }
 
                 Section {
