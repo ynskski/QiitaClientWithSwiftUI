@@ -19,8 +19,15 @@ struct ArticleRowView: View {
                 Text(article.title)
                     .lineLimit(nil)
                 
-                Text("by \(article.user.id)")
-                    .font(.caption)
+                HStack {
+                    Text("by \(article.user.id)")
+                        .font(.caption)
+                    
+                    Spacer()
+                    
+                    Text("\(article.likesCount)いいね")
+                        .font(.caption)
+                }
             }
         }
     }
@@ -28,6 +35,6 @@ struct ArticleRowView: View {
 
 struct ArticleRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleRowView(article: Article(id: "0", title: "title", url: "http://test", user: Article.User(id: "1", name: "name", profileImageURL: "http://profile")))
+        ArticleRowView(article: Article(id: "0", title: "title", likesCount: 1, url: "http://test", user: Article.User(id: "1", name: "name", profileImageURL: "http://profile")))
     }
 }
