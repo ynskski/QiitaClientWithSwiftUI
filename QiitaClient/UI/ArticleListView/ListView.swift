@@ -13,6 +13,7 @@ struct ListView: View {
     @State var showModal = false
     @State var url = ""
     @State var searchText = ""
+    @State private var page = 1
     
     var body: some View {
         NavigationView {
@@ -34,6 +35,21 @@ struct ListView: View {
                 }
             }
             .navigationBarTitle(Text("New Articles"))
+            .navigationBarItems(leading:
+                Button(action: {
+                    self.page = 1
+                    self.viewModel.loadArticles(page: self.page)
+                }, label: {
+                    Text("Reload")
+                }),
+            trailing:
+                Button(action: {
+                    self.page += 1
+                    self.viewModel.addArticles(page: self.page)
+                }, label: {
+                    Text("Next")
+                })
+            )
             .sheet(isPresented: $showModal) {
                 SafariView(url: URL(string: self.url)!)
                     .edgesIgnoringSafeArea(.bottom)

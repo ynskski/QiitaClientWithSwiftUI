@@ -19,7 +19,7 @@ class ProfileImageService {
                 guard let response = response as? HTTPURLResponse, 200..<300 ~= response.statusCode else {
                     throw APIError.unknown
                 }
-                return UIImage(data: data)!
+                return UIImage(data: data) ?? UIImage(systemName: "photo")!
             }
             .mapError { error -> APIError in
                 if let error = error as? APIError {

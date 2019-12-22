@@ -15,13 +15,14 @@ class ListViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     
     init() {
-        loadArticles()
+        loadArticles(page: 1)
     }
     
-    func loadArticles() {
+    func loadArticles(page: Int) {
         let url = "https://qiita.com/api/v2/items"
         guard var urlComponents = URLComponents(string: url) else { return }
         urlComponents.queryItems = [
+            URLQueryItem(name: "page", value: String(page)),
             URLQueryItem(name: "per_page", value: "50")
         ]
         
@@ -37,6 +38,31 @@ class ListViewModel: ObservableObject {
                     }
                 }, receiveValue: { articles in
                     self.articles = articles
+                }
+            )
+            .store(in: &cancellables)
+    }
+    
+    func addArticles(page: Int) {
+        let url = "https://qiita.com/api/v2/items"
+        guard var urlComponents = URLComponents(string: url) else { return }
+        urlComponents.queryItems = [
+            URLQueryItem(name: "page", value: String(page)),
+            URLQueryItem(name: "per_page", value: "50")
+        ]
+        
+        ArticleService()
+            .fetchArticle(url: urlComponents.url!)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }, receiveValue: { articles in
+                    self.articles += articles
                 }
             )
             .store(in: &cancellables)
