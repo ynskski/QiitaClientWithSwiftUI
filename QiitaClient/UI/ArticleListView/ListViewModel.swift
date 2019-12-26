@@ -61,8 +61,8 @@ class ListViewModel: ObservableObject {
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
-                }, receiveValue: { articles in
-                    self.articles += articles
+                }, receiveValue: { additionalArticles in
+                    self.articles.append(contentsOf: additionalArticles)
                 }
             )
             .store(in: &cancellables)
