@@ -14,7 +14,6 @@
 		0241D09023366A4800228C95 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0241D08F23366A4800228C95 /* Preview Assets.xcassets */; };
 		0241D09323366A4800228C95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0241D09123366A4800228C95 /* LaunchScreen.storyboard */; };
 		0241D09E23366A4800228C95 /* QiitaClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0241D09D23366A4800228C95 /* QiitaClientTests.swift */; };
-		027703A22340E443001EA27B /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027703A12340E443001EA27B /* ArticleView.swift */; };
 		0286CACB234768F700496DED /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0286CACA234768F700496DED /* ArticleService.swift */; };
 		0286CACD2347AA1B00496DED /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0286CACC2347AA1B00496DED /* APIError.swift */; };
 		0286CAD02347ACBB00496DED /* ProfileImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0286CACF2347ACBB00496DED /* ProfileImageService.swift */; };
@@ -49,7 +48,6 @@
 		0241D09923366A4800228C95 /* QiitaClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiitaClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0241D09D23366A4800228C95 /* QiitaClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaClientTests.swift; sourceTree = "<group>"; };
 		0241D09F23366A4800228C95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		027703A12340E443001EA27B /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		0286CACA234768F700496DED /* ArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
 		0286CACC2347AA1B00496DED /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		0286CACF2347ACBB00496DED /* ProfileImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageService.swift; sourceTree = "<group>"; };
@@ -138,14 +136,6 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
-		027703A32340E449001EA27B /* DetailView */ = {
-			isa = PBXGroup;
-			children = (
-				027703A12340E443001EA27B /* ArticleView.swift */,
-			);
-			path = DetailView;
-			sourceTree = "<group>";
-		};
 		0286CAC9234768E800496DED /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				0289E3272348F27200B51454 /* ActivityIndicator */,
-				027703A32340E449001EA27B /* DetailView */,
 				0277039E2340E0A6001EA27B /* WebView */,
 				02AB53D02346093A0038D0BC /* ArticleRow */,
 				0293C1972340D88D003F53F0 /* ArticleListView */,
@@ -316,7 +305,6 @@
 				0293C187234083CB003F53F0 /* Article.swift in Sources */,
 				0293C1912340B655003F53F0 /* ProfileImageViewModel.swift in Sources */,
 				0241D08723366A4500228C95 /* AppDelegate.swift in Sources */,
-				027703A22340E443001EA27B /* ArticleView.swift in Sources */,
 				0289E3292348F28B00B51454 /* ActivityIndicator.swift in Sources */,
 				02F045C72340E9A400E6233E /* SafariView.swift in Sources */,
 				0286CACD2347AA1B00496DED /* APIError.swift in Sources */,
