@@ -16,43 +16,45 @@ struct ListView: View {
     @State private var page = 1
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section {
-                    TextField("Search", text: self.$searchText)
-                        .keyboardType(.webSearch)
-                }
+        LoadingView(isShowing: self.viewModel.isFetching) {
+            NavigationView {
+                Form {
+                    Section {
+                        TextField("Search", text: self.$searchText)
+                            .keyboardType(.webSearch)
+                    }
 
-                Section {
-                    ForEach(self.viewModel.articles) { article in
-                        ArticleRowView(article: article)
-                            .onTapGesture {
-                                self.showModal.toggle()
-                                self.url = article.url
-                            }
-                            .padding(.vertical, 8)
+                    Section {
+                        ForEach(self.viewModel.articles) { article in
+                            ArticleRowView(article: article)
+                                .onTapGesture {
+                                    self.showModal.toggle()
+                                    self.url = article.url
+                                }
+                                .padding(.vertical, 8)
+                        }
                     }
                 }
-            }
-            .navigationBarTitle(Text("New Articles"))
-            .navigationBarItems(leading:
-                Button(action: {
-                    self.page = 1
-                    self.viewModel.loadArticles(page: self.page)
-                }, label: {
-                    Text("Reload")
-                }),
-            trailing:
-                Button(action: {
-                    self.page += 1
-                    self.viewModel.addArticles(page: self.page)
-                }, label: {
-                    Text("Next")
-                })
-            )
-            .sheet(isPresented: $showModal) {
-                SafariView(url: URL(string: self.url)!)
-                    .edgesIgnoringSafeArea(.bottom)
+                .navigationBarTitle(Text("New Articles"))
+                .navigationBarItems(leading:
+                    Button(action: {
+                        self.page = 1
+                        self.viewModel.loadArticles(page: self.page)
+                    }, label: {
+                        Text("Reload")
+                    }),
+                trailing:
+                    Button(action: {
+                        self.page += 1
+                        self.viewModel.addArticles(page: self.page)
+                    }, label: {
+                        Text("Next")
+                    })
+                )
+                .sheet(isPresented: self.$showModal) {
+                    SafariView(url: URL(string: self.url)!)
+                        .edgesIgnoringSafeArea(.bottom)
+                }
             }
         }
     }

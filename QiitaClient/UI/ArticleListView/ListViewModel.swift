@@ -11,6 +11,7 @@ import Combine
 
 class ListViewModel: ObservableObject {
     @Published var articles: [Article] = []
+    @Published var isFetching = false
     
     private var cancellables: Set<AnyCancellable> = []
     
@@ -19,6 +20,8 @@ class ListViewModel: ObservableObject {
     }
     
     func loadArticles(page: Int) {
+        isFetching = true
+        
         QiitaAPI()
             .fetchArticle(page: page)
             .sink(receiveCompletion: { completion in
@@ -28,6 +31,7 @@ class ListViewModel: ObservableObject {
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
+                self.isFetching = false
             }, receiveValue: { articles in
                 self.articles = articles
             })

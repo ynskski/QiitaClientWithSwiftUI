@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0214E4B623CAE9E200697BC6 /* QiitaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0214E4B523CAE9E200697BC6 /* QiitaAPI.swift */; };
+		0214E4B823CB0F8A00697BC6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0214E4B723CB0F8A00697BC6 /* LoadingView.swift */; };
 		0241D08723366A4500228C95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0241D08623366A4500228C95 /* AppDelegate.swift */; };
 		0241D08923366A4500228C95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0241D08823366A4500228C95 /* SceneDelegate.swift */; };
 		0241D08B23366A4500228C95 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0241D08A23366A4500228C95 /* ListView.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		0214E4B523CAE9E200697BC6 /* QiitaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaAPI.swift; sourceTree = "<group>"; };
+		0214E4B723CB0F8A00697BC6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		0241D08323366A4500228C95 /* QiitaClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0241D08623366A4500228C95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0241D08823366A4500228C95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		0289E3272348F27200B51454 /* ActivityIndicator */ = {
 			isa = PBXGroup;
 			children = (
+				0214E4B723CB0F8A00697BC6 /* LoadingView.swift */,
 				0289E3282348F28B00B51454 /* ActivityIndicator.swift */,
 			);
 			path = ActivityIndicator;
@@ -313,6 +316,7 @@
 				02F045C72340E9A400E6233E /* SafariView.swift in Sources */,
 				0286CACD2347AA1B00496DED /* APIError.swift in Sources */,
 				0293C1932340BA30003F53F0 /* ProfileImageView.swift in Sources */,
+				0214E4B823CB0F8A00697BC6 /* LoadingView.swift in Sources */,
 				02AB53D2234609590038D0BC /* ArticleRowView.swift in Sources */,
 				0241D08923366A4500228C95 /* SceneDelegate.swift in Sources */,
 				0241D08B23366A4500228C95 /* ListView.swift in Sources */,

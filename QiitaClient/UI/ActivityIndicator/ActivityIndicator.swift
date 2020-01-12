@@ -10,7 +10,7 @@ import SwiftUI
 import UIKit
 
 struct ActivityIndicator: UIViewRepresentable {
-    @State var isLoading: Bool
+    @Binding var isLoading: Bool
     let style: UIActivityIndicatorView.Style
     
     func makeUIView(context: UIViewRepresentableContext<ActivityIndicator>) -> UIActivityIndicatorView {
