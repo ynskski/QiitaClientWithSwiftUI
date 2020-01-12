@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0214E4B623CAE9E200697BC6 /* QiitaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0214E4B523CAE9E200697BC6 /* QiitaAPI.swift */; };
 		0241D08723366A4500228C95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0241D08623366A4500228C95 /* AppDelegate.swift */; };
 		0241D08923366A4500228C95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0241D08823366A4500228C95 /* SceneDelegate.swift */; };
 		0241D08B23366A4500228C95 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0241D08A23366A4500228C95 /* ListView.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0214E4B523CAE9E200697BC6 /* QiitaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaAPI.swift; sourceTree = "<group>"; };
 		0241D08323366A4500228C95 /* QiitaClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0241D08623366A4500228C95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0241D08823366A4500228C95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				0293C186234083CB003F53F0 /* Article.swift */,
 				0286CACC2347AA1B00496DED /* APIError.swift */,
+				0214E4B523CAE9E200697BC6 /* QiitaAPI.swift */,
 				0286CAC9234768E800496DED /* Service */,
 			);
 			path = API;
@@ -303,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0293C187234083CB003F53F0 /* Article.swift in Sources */,
+				0214E4B623CAE9E200697BC6 /* QiitaAPI.swift in Sources */,
 				0293C1912340B655003F53F0 /* ProfileImageViewModel.swift in Sources */,
 				0241D08723366A4500228C95 /* AppDelegate.swift in Sources */,
 				0289E3292348F28B00B51454 /* ActivityIndicator.swift in Sources */,
